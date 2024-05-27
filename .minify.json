@@ -6,9 +6,6 @@
         "removeConsole": false,
         "removeUselessSpread": true
     },
-    "img": {
-        "maxSize": 4096
-    },
     "html": {
         "removeComments": true,
         "removeCommentsFromCDATA": true,
