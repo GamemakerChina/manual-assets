@@ -14,8 +14,8 @@ glob(export_directory + '**/*.htm', {}, (err, files) => {
             let normalizeName = path.normalize(files[index])
             let fileHTML = fs.readFileSync(files[index]).toString()
             // console.log(json)
-            let assetsImagesLocation = 'src="' + assetsOutsideUrl + 'assets/Images'
-            let assetsVideosLocation = 'src="' + assetsOutsideUrl + 'assets/Videos'
+            let assetsImagesLocation = 'src="' + assetsOutsideUrl + '/assets/Images'
+            let assetsVideosLocation = 'src="' + assetsOutsideUrl + '/assets/Videos'
             
             let final = fileHTML.replace('src="assets/Images', assetsImagesLocation)
                                 .replace('src="../assets/Images', assetsImagesLocation)
@@ -26,11 +26,7 @@ glob(export_directory + '**/*.htm', {}, (err, files) => {
                                 .replace('src="../../assets/Videos', assetsVideosLocation)
                                 .replace('src="../../../../../assets/Videos', assetsVideosLocation)
             
-            fs.writeFile(normalizeName, final, (err) => {
-                if (err) {
-                    console.log(err)
-                }
-            })
+            fs.writeFileSync(normalizeName, final)
         }
     }
 })
