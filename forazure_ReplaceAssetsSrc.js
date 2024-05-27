@@ -4,8 +4,9 @@ const path = require("path");
 const fs = require("fs");
 
 let assetsOutsideUrl = "https://manual-assets.gm-cn.top"
+let export_directory = "../"
 
-glob('**/*.htm', {}, (err, files) => {
+glob(export_directory + '**/*.htm', {}, (err, files) => {
     if (err) {
         console.log("错误：" + err)
     } else {
