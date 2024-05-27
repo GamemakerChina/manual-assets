@@ -9,6 +9,6 @@
   "author": "GameMaker China Forum",
   "license": "ISC",
   "dependencies": {
-    "glob": "^10.4.1"
+    "glob": "^8.0.3"
   }
 }
