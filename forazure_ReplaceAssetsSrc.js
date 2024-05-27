@@ -17,14 +17,14 @@ glob(export_directory + '**/*.htm', {}, (err, files) => {
             let assetsImagesLocation = 'src="' + assetsOutsideUrl + '/assets/Images'
             let assetsVideosLocation = 'src="' + assetsOutsideUrl + '/assets/Videos'
             
-            let final = fileHTML.replace('src="assets/Images', assetsImagesLocation)
-                                .replace('src="../assets/Images', assetsImagesLocation)
-                                .replace('src="../../assets/Images', assetsImagesLocation)
-                                .replace('src="../../../assets/Images', assetsImagesLocation)
-                                .replace('src="../../../../assets/Images', assetsImagesLocation)
-                                .replace('src="../../../../../assets/Images', assetsImagesLocation)
-                                .replace('src="../../assets/Videos', assetsVideosLocation)
-                                .replace('src="../../../../../assets/Videos', assetsVideosLocation)
+            let final = fileHTML.replaceAll('src="assets/Images', assetsImagesLocation)
+                                .replaceAll('src="../assets/Images', assetsImagesLocation)
+                                .replaceAll('src="../../assets/Images', assetsImagesLocation)
+                                .replaceAll('src="../../../assets/Images', assetsImagesLocation)
+                                .replaceAll('src="../../../../assets/Images', assetsImagesLocation)
+                                .replaceAll('src="../../../../../assets/Images', assetsImagesLocation)
+                                .replaceAll('src="../../assets/Videos', assetsVideosLocation)
+                                .replaceAll('src="../../../../../assets/Videos', assetsVideosLocation)
             
             fs.writeFileSync(normalizeName, final)
         }
