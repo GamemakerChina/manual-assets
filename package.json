@@ -2,12 +2,11 @@
   "name": "manual-assets",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "replace": "node forazure_ReplaceAssetsSrc.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "GameMaker China Forum",
   "license": "ISC",
   "dependencies": {
     "glob": "^10.4.1"
